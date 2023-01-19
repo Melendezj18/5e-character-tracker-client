@@ -37,6 +37,29 @@ export const onShowCharacterSuccess = (character) => {
         <p>${character.wisdom}</p>
         <p>${character.charisma}</p>
         <p>${character._id}</p>
+
+        <form data-id="${character._id}">
+        <input type="text" name="firstName" value="${character.firstName}" />
+        <input type="text" name="lastName" value="${character.lastName}" />
+        <input type="text" name="class" value="${character.class}" />
+        <input type="number" name="strength" value="${character.strength}" />
+        <input type="number" name="dexterity" value="${character.dexterity}" />
+        <input type="number" name="constitution" value="${character.constitution}" />
+        <input type="number" name="intelligence" value="${character.intelligence}" />
+        <input type="number" name="wisdom" value="${character.wisdom}" />
+        <input type="number" name="charisma" value="${character.charisma}" />
+        <input type="submit" value="Update Character" />
+    </form>
+
+    <button type="button" data-id="${character._id}">Delete Character</button>
     `
     showCharacterContainer.appendChild(div)
+}
+
+export const onUpdateCharacterSuccess = () => {
+    messageContainer.innerText = 'Update was successful :)'
+}
+
+export const onDeleteCharacterSuccess = () => {
+    messageContainer.innerText = 'Delete was successful :)'
 }
